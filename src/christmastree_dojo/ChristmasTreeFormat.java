@@ -15,7 +15,7 @@ public class ChristmasTreeFormat {
 		for (int i = 0; i < input.length(); i++) {
 			currentChar = String.valueOf(input.charAt(i));
 			if (i == 0) {
-				result.append(makeRow(spaceCount, i, currentChar));
+				result.append(makeRow(spaceCount, 1, currentChar));
 				spaceCount--;
 			} else {
 				result.append("\n" + makeRow(spaceCount, charRowCount, currentChar));
