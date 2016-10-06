@@ -1,0 +1,14 @@
+Input: string
+Output: chrismastree format
+
+Examples:
+
+	  b
+	 yyy
+	eeeee
+
+		h
+	   eee
+	  lllll
+	 lllllll
+	ooooooooo
