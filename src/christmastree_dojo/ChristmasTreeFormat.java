@@ -4,39 +4,37 @@ public class ChristmasTreeFormat {
 
 	public StringBuilder formatter(String input) {
 		StringBuilder result = new StringBuilder();
-		String currentChar = "";
-		int charRowCount = 3;
-		int spaceCount = input.length() - 1;
-
 		if (input == null || input.equals("")) {
 			return result;
 		}
 
+		String currentChar = "";
+		int charRowCount = 3;
+		int spaceCount = input.length() - 1;
+
 		for (int i = 0; i < input.length(); i++) {
 			currentChar = String.valueOf(input.charAt(i));
 			if (i == 0) {
-				result.append(makeSpaces(spaceCount));
+				result.append(makeRow(spaceCount, i, currentChar));
 				spaceCount--;
-				result.append(currentChar);
 			} else {
-				result.append("\n");
-				result.append(makeSpaces(spaceCount));
+				result.append("\n" + makeRow(spaceCount, charRowCount, currentChar));
 				spaceCount--;
-				for (int j = 0; j < charRowCount; j++) {
-					result.append(currentChar);
-				}
 				charRowCount += 2;
 			}
 		}
 		return result;
 	}
 
-	private String makeSpaces(int spaceCnt) {
-		String spaces = "";
+	private String makeRow(int spaceCnt, int charRowCnt, String charToAppend) {
+		String row = "";
 		for (int p = 0; p < spaceCnt; p++) {
-			spaces += " ";
+			row += " ";
 		}
-		return spaces;
+		for (int j = 0; j < charRowCnt; j++) {
+			row += charToAppend;
+		}
+		return row;
 	}
 
 	public static void main(String[] args) {
